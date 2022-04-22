@@ -1,37 +1,32 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import './servicedetails.css'
-const Servicedetails = () => {
-    const {serviceId}=useParams()
-    const [service,setService]=useState({})
+const Bikedetails = () => {
+    const {bikeId}=useParams()
+    const [bike,setBike]=useState({})
     useEffect(()=>{
-        const url=`http://localhost:5000/service/${serviceId}`
+        const url=`http://localhost:5000/bike/${bikeId}`
         fetch(url)
         .then(res=>res.json())
-        .then(data=>setService(data))
+        .then(data=>setBike(data))
     },[])
-   
-   console.log(service);
     return (
         <div>
-           <div className="card mb-3 cards">
+            <div className="card mb-3 cards">
   <div className="row g-0">
     <div className="col-md-4">
-      <img  src={service?.img} className="img-fluid rounded-start" alt="..." />
+      <img  src={bike?.picture} className="img-fluid rounded-start" alt="..." />
     </div>
     <div className="col-md-8">
       <div className="card-body">
-        <h5 className="card-title">{service?.name}</h5>
+        <h5 className="card-title">{bike?.name}</h5>
         <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
         <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
       </div>
     </div>
   </div>
 </div>
-          
-          
         </div>
     );
 };
 
-export default Servicedetails;
+export default Bikedetails;

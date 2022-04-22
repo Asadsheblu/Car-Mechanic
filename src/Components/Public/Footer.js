@@ -7,7 +7,7 @@ const Footer = () => {
     };
     return (
         <div>
-            <h1>This is Footer</h1>
+     
             <p className="m-0 text-center text-danger fw-bold">
                     Copyright &copy;
                     <span> {getYear()} MD Asaduz Zsman </span>

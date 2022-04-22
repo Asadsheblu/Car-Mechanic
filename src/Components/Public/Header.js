@@ -19,7 +19,7 @@ const Header = () => {
       <span className="navbar-toggler-icon"></span>
     </button>
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+      <ul className="navbar-nav  mb-2 mb-lg-0">
         <li className="nav-item">
         <Link className="nav-link active" to='/'>Home</Link>
         </li>
@@ -29,6 +29,18 @@ const Header = () => {
         <li className="nav-item">
         <Link className="nav-link" to='/service'>Service</Link>
         </li>
+        
+       { user && <>
+        <li className="nav-item"> 
+        <Link className="nav-link" to="/addservice">AddService </Link>
+        </li>
+        <li className="nav-item"> 
+        <Link className="nav-link" to="/manage">Manageservice </Link>
+        </li>
+        </>
+       
+       }
+        
        
         <li className="nav-item">  
        { user?
